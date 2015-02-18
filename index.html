@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="es">
+  <head>
+    <meta charset="stf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarea 03</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/mystyle.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+<!-- cabecera sencilla -->
+
+    <header class="row">
+
+      <div class="large-3 columns">
+          <h1><img src="img/logoddo.jpg"></h1>
+      </div>
+      
+      <div class="large-9 columns right">
+          <h2>CREADOR DE PARTIES DE DM-GERALD</h2>
+          <P>Bienvenidos al creador de parties, sigue las indicaciones de las flechas voladoras!!!!</P>
+      </div>
+    
+    </header>
+
+
+    <div class="row">
+      <hr>
+
+<!-- aqui van las clases -->
+
+      <div class="large-2 columns">
+
+        <img data-tooltip aria-haspopup="true" class="has-tip tip-right" title="Fuerza y Destreza, BLOOD for Honor!!!" class="fighter" src="img/fighter.png">
+        <!-- <br> -->
+
+        <img data-tooltip aria-haspopup="true" class="has-tiptip-right" title="Magia y Energias Miticas, los magos pueden cambiar el mundo con un chasquido de sus dedos... o morir en el intento" class="wizard" src="img/wizard.png">
+        <!-- <br> -->
+
+        <img data-tooltip aria-haspopup="true" class="has-tip tip-right" title="Deja de rezar y curame pinche cleric!!!!" class="cleric" src="img/cleric.png">
+<!--         <br> -->
+
+        <img data-tooltip aria-haspopup="true" class="has-tip tip-right" title="Las dagas en la oscuridad... nadie esta seguro!!" class="rogue" src="img/rogue.png">
+        <!-- <br> -->
+
+        <img data-tooltip aria-haspopup="true" class="has-tip tip-right" title="Los Bardos cantan bonito" class="bard" src="img/bardo.png">
+
+      </div>
+
+<!-- aqui ira el editor del personaje -->
+
+      <div class="large-5 columns pjeditor">
+          
+      </div>
+
+<!-- aqui iran explicaciones y los botones q indican q se ha acabado el proceso -->
+
+      <div class="large-5 columns">
+      
+        <h4 class="text-center">Aqui va el nombre de la clase</h4>
+        <p>aqui va una explicacion relativamente sera de loq hace la clase q se ha clickeado</p>
+
+          <div class="panel">
+  
+            <h5>ARE YOU READY?</h5>
+            
+            <h6 class="subheader">Tu personaje esta listo para la batalla, termina de editarlo o reemplazalo</h6>
+            
+            <div class="row">
+              <a class="columns large-5 button round" role="button" href="#" >Add to Party</a>
+              <a class="columns large-5 button round" role="button" aria-label="submit form" href="#" >REJECTED</a>
+            </div>
+  
+          </div>
+
+<!-- aqui va el partie completo a medida q lo va editando -->
+
+          <div class="row">
+  
+            <div class="columns large-4">player 01</div>
+            <div class="columns large-4">player 02</div>
+            <div class="columns large-4">player 03</div>
+            <button class="button disabled centered success expand">LETS KILL SOME ORCS!!!</button>
+          
+          </div>
+
+      </div>
+
+    </div>
+
+
+<!-- aqui iran las formas para llenar los atributos de cada pj -->
+    <div class="sheet row">
+      <form action="">
+
+<!--         <div class="row"> -->
+
+          <div class="large-3 columns">
+              <label class="text-center inline"  for="">Nombre</label>
+
+          </div>
+          
+          <div class="large-9 columns">
+              <input class="namepj" type="text"  for="Se creativo">
+          </div>
+  
+          <div class="large-12 columns">
+            
+            <table class="statselector">
+              <thead >
+                <tr >
+                  <th width="">Attribute</th>
+                  <th></th>
+                  <th width="">Add Points</th>
+                  <th width="">Rest Points</th>
+                </tr>
+              </thead>
+
+              <tbody >
+                <tr>
+                  <td>Fuerza</td>
+                  <td>cantidad</td>
+                  <td class="text-center"> + </td>
+                  <td class="text-center"> - </td>
+                </tr>
+
+               <tr>
+                  <td>Destreza</td>
+                  <td>cantidad</td>
+                  <td class="text-center"> + </td>
+                  <td class="text-center"> - </td>
+                </tr>
+              
+                <tr>
+                  <td>Inteligencia</td>
+                  <td>cantidad</td>
+                  <td class="text-center"> + </td>
+                  <td class="text-center"> - </td>
+                </tr>
+          
+                <tr>
+                  <td>Carisma</td>
+                  <td>cantidad</td>
+                  <td class="text-center"> + </td>
+                  <td class="text-center"> - </td>
+                </tr>
+          
+              </tbody>
+            </table>
+          </div>
+          
+          <div class=" large-12 columns text-right">
+            <p>Total points Remaining: <span>20</span></p>
+          </div>
+<!-- 
+        </div> -->
+
+
+
+      </form>
+    </div>
+
+
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

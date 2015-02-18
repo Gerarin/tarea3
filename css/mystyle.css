@@ -1,0 +1,14 @@
+.sheet{
+	border: solid green 1px;
+	background-image: url("../img/bgtarea3.jpg");
+}
+
+.namepj{
+	background-color: transparent!important;
+	border: solid black 2px;
+}
+
+.statselector{
+	background-color: transparent!important;
+	border: solid black 2px;
+}
