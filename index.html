@@ -31,27 +31,27 @@
 
 <!-- aqui van las clases -->
 
-      <div class="large-2 columns">
+      <div class="large-2 medium-2 columns">
 
-        <img data-tooltip aria-haspopup="true" class="has-tip tip-right" title="Fuerza y Destreza, BLOOD for Honor!!!" class="fighter" src="img/fighter.png">
+        <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass fighter" title="Fuerza y Destreza, BLOOD for Honor!!!" src="img/fighter.png">
         <!-- <br> -->
 
-        <img data-tooltip aria-haspopup="true" class="has-tiptip-right" title="Magia y Energias Miticas, los magos pueden cambiar el mundo con un chasquido de sus dedos... o morir en el intento" class="wizard" src="img/wizard.png">
+        <img data-tooltip aria-haspopup="true" class="has-tiptip-right pjClass wizard" title="Magia y Energias Miticas, los magos pueden cambiar el mundo con un chasquido de sus dedos... o morir en el intento" src="img/wizard.png">
         <!-- <br> -->
 
-        <img data-tooltip aria-haspopup="true" class="has-tip tip-right" title="Deja de rezar y curame pinche cleric!!!!" class="cleric" src="img/cleric.png">
+        <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass" title="Deja de rezar y curame pinche cleric!!!!" cla ss="cleric" src="img/cleric.png">
 <!--         <br> -->
 
-        <img data-tooltip aria-haspopup="true" class="has-tip tip-right" title="Las dagas en la oscuridad... nadie esta seguro!!" class="rogue" src="img/rogue.png">
+        <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass" title="Las dagas en la oscuridad... nadie esta seguro!!" class="rogue" src="img/rogue.png">
         <!-- <br> -->
 
-        <img data-tooltip aria-haspopup="true" class="has-tip tip-right" title="Los Bardos cantan bonito" class="bard" src="img/bardo.png">
+        <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass" title="Los Bardos cantan bonito" class="bard" src="img/bardo.png">
 
       </div>
 
 <!-- aqui ira el editor del personaje -->
 
-      <div class="large-5 columns pjeditor">
+      <div class="large-5 medium-8 columns pjEditor">
           
       </div>
 
@@ -92,66 +92,71 @@
 
 
 <!-- aqui iran las formas para llenar los atributos de cada pj -->
-    <div class="sheet row">
+    <div class="pjSheet row hide">
+     <div class="large-12 medium-10 columns">
+      <div class="row">
       <form action="">
 
 <!--         <div class="row"> -->
 
-          <div class="large-3 columns">
+          <div class="large-3 medium-3 columns">
               <label class="text-center inline"  for="">Nombre</label>
 
           </div>
           
-          <div class="large-9 columns">
+          <div class="large-9 medium-9 columns">
               <input class="namepj" type="text"  for="Se creativo">
           </div>
   
-          <div class="large-12 columns">
+          <div class="large-12 medium-12 columns ">
             
-            <table class="statselector">
-              <thead >
-                <tr >
-                  <th width="">Attribute</th>
-                  <th></th>
-                  <th width="">Add Points</th>
-                  <th width="">Rest Points</th>
-                </tr>
-              </thead>
 
-              <tbody >
-                <tr>
-                  <td>Fuerza</td>
-                  <td>cantidad</td>
-                  <td class="text-center"> + </td>
-                  <td class="text-center"> - </td>
-                </tr>
 
-               <tr>
-                  <td>Destreza</td>
-                  <td>cantidad</td>
-                  <td class="text-center"> + </td>
-                  <td class="text-center"> - </td>
-                </tr>
-              
-                <tr>
-                  <td>Inteligencia</td>
-                  <td>cantidad</td>
-                  <td class="text-center"> + </td>
-                  <td class="text-center"> - </td>
-                </tr>
-          
-                <tr>
-                  <td>Carisma</td>
-                  <td>cantidad</td>
-                  <td class="text-center"> + </td>
-                  <td class="text-center"> - </td>
-                </tr>
-          
-              </tbody>
-            </table>
+              <table class="statselector">
+                <thead >
+                  <tr >
+                    <th width="25%">Attribute</th>
+                    <th width="15%"></th>
+                    <th width="30%">Add Points</th>
+                    <th width="30%">Rest Points</th>
+                  </tr>
+                </thead>
+
+                <tbody >
+                  <tr>
+                    <td>Fuerza</td>
+                    <td class="text-center">#</td>
+                    <td class="text-center"> + </td>
+                    <td class="text-center"> - </td>
+                  </tr>
+
+                 <tr>
+                    <td>Destreza</td>
+                    <td class="text-center">#</td>
+                    <td class="text-center"> + </td>
+                    <td class="text-center"> - </td>
+                  </tr>
+                
+                  <tr>
+                    <td>Inteligencia</td>
+                    <td class="text-center">#</td>
+                    <td class="text-center"> + </td>
+                    <td class="text-center"> - </td>
+                  </tr>
+            
+                  <tr>
+                    <td>Carisma</td>
+                    <td class="text-center">#</td>
+                    <td class="text-center"> + </td>
+                    <td class="text-center"> - </td>
+                  </tr>
+            
+                </tbody>
+              </table>
+
           </div>
           
-          <div class=" large-12 columns text-right">
+          <div class=" large-12 medium-12 columns text-right">
             <p>Total points Remaining: <span>20</span></p>
           </div>
 <!-- 
@@ -159,13 +164,16 @@
 
 
 
-      </form>
+       </form>
+       </div>
+      </div>
     </div>
 
 
     
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script src="js/myscript.js"></script>    
     <script>
       $(document).foundation();
     </script>
