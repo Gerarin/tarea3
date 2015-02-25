@@ -1,6 +1,6 @@
 .pjSheet{
 	border: solid green 1px;
-	background-image: url("../img/bgtarea3.jpg");
+	/*background-image: url("../img/bgtarea3.jpg");*/
 }
 
 .namepj{
@@ -8,7 +8,23 @@
 	border: solid black 2px;
 }
 
-.statselector{
-	background-color: transparent!important;
-	border: solid black 2px;
+
+.statGen{
+
+	padding-top: 20px;
+}
+
+.atriTable{
+
+	padding-bottom: 20px;
+}
+
+.headTable{
+
+	padding-bottom: 20px;
+}
+
+.untochable{
+	pointer-events: none;
+
 }
