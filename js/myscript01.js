@@ -1,31 +1,55 @@
 $(document).ready(function(){
 
 // BASE DE DATOS DE CHARACTERS********************************
-game = {}
-game.characters = []
-
 
 var charactersData = {
   "utils":{
     "container":".Expo",
 
-    processStats:function(valor,selectStat, boton, acambiar){
+    processStats:function(valor,selectStat, boton, acambiar, favoriteStat){
+
+      if( selectStat == favoriteStat){
+ 
+        charactersData.globals.iniPoints -=1;
+        valor +=2;
+        boton.parents('.prueba').find(".stat01").text(valor);
+        boton.parents('.prueba').attr("value", valor);
+        acambiar.text(charactersData.globals.iniPoints);
+      }
+
+      else {
 
         charactersData.globals.iniPoints -=1;
         valor +=1;
         boton.parents('.prueba').find(".stat01").text(valor);
         boton.parents('.prueba').attr("value", valor);
         acambiar.text(charactersData.globals.iniPoints);
+      }
 
     },
 
-    minusStats:function(valor,selectStat, boton, acambiar){
+    minusStats:function(valor,selectStat, boton, acambiar, favoriteStat){
 
+      if( selectStat == favoriteStat){
+ 
         charactersData.globals.iniPoints +=1;
-        valor -=1;
+        valor -=2;
+
         boton.parents('.prueba').find(".stat01").text(valor);
         boton.parents('.prueba').attr("value", valor);
         acambiar.text(charactersData.globals.iniPoints);
+      }
+
+      else {
+
+        charactersData.globals.iniPoints +=1;
+        valor -=1;
+
+        boton.parents('.prueba').find(".stat01").text(valor);
+        boton.parents('.prueba').attr("value", valor);
+        acambiar.text(charactersData.globals.iniPoints);
+          
+      }
 
     },    
 
@@ -43,6 +67,8 @@ var charactersData = {
             descript:"Experto en todas las armas y tecnicas de combate, la vanguardia del equipo!!",
             habilidades:"Habilidades principales: Fuerza y Destreza",
             img:"",
+            favoriteStat:"str",
+
           },
 
   "wizard": { 
@@ -51,6 +77,8 @@ var charactersData = {
             descript:"Magia y poderes, los magos no tienen limites conocidos con tiempo y preparacion",
             habilidades: "Habilidades principales: Inteligencia",
             img:"",
+             favoriteStat:"int",
+
           },
 
   "cleric": { 
@@ -59,6 +87,8 @@ var charactersData = {
             descript:"Energia sagrada, pura y santificada, llevan la palabra de sus dioses y ejercen sus designios ",
             habilidades:"Habilidades principales: Carisma y Fuerza",
             img:"",
+            favoriteStat:"cha",
+
           },
           
   "rogue": { 
@@ -67,6 +97,8 @@ var charactersData = {
             descript:"Habiles agentes de la oscur dad, no hay reja q los contenga nni obetivo imposible para ellos. ",
             habilidades:"Habilidades principales: Destreza e Inteligencia",
             img:"",
+             favoriteStat:"dex",
+
           },
 
   "bard": { 
@@ -75,35 +107,27 @@ var charactersData = {
             descript:"Alegres agentes del destino, viajeros y recolectores de conocimiento, su voz llaman a la batalla e inspian la grandeza en todos: ",
             habilidades:"Habilidades principales: Carisma y Destreza",
             img:"",
-          },
+             favoriteStat:"cha",
 
-                            
+          },                            
 
 };
 
-var newCharacter ={
-    "name":"",
-    "ChaClass":"",
-    "fuer":"",
-    "dextre":"",
-    "inteli":"",
-    "cari":"",
-    "chaIma":"", 
-
-  } ;
 
 // AQUI SE DA EL CLICK Y EMPIEZA EL SHOW
 
   $( ".selection_column").on("click", ".pjClass", function(){
 
-      // identificamos 'profesion' con el click q damos
-      profession = $(this).parent().attr("data");
+// identificamos 'profesion' con el click q damos
 
+      var profession = $(this).parent().attr("data");
 
-      // le asignamos falso a 'selection_pointer' 
+// le asignamos falso a 'selection_pointer' para usar despues esa variable      
+
       charactersData.globals.selection_pointer = false;
 
-      // si el div genStat tiene hide, se lo remueve
+// si el div genStat tiene hide, se lo remueve
+
       if ($("#genStat").hasClass("hide")){
 
           $(".statGen").removeClass("hide");
@@ -113,19 +137,19 @@ var newCharacter ={
 
           if ( charactersData.globals.selection_pointer == false) {
               $(".selectClass").addClass("untochable");
-              };
+              }
 
-        // Definimos 'persona' dependiendo d 'profession' en charactersData 
+// Definimos 'persona' dependiendo del valor de 'profession' en charactersData 
 
-        // APARECER EL COMENTARIO DE CLASE CORRESPONDIENTE
+// HACE APARECER EL COMENTARIO DE LA CLASE CORRESPONDIENTE
 
-        // Ya podemos utilizar los valores de cada una d las clases desde 'persona'
+// Despues ya podemos utilizar los valores de cada una d las clases desde 'persona'
 
-        // se setea .iniPoints a la cantidad inicial
+// se setea .iniPoints a la cantidad inicial
 
           var persona = charactersData[profession];
 
-          $(charactersData.utils.container).removeClass("hide");
+          $(charactersData.utils.container).toggleClass("hide");
 
           $(".title").text(persona.name);
           $(".resume").text(persona.descript);
@@ -135,18 +159,20 @@ var newCharacter ={
 
       };
 
-});
+  });
+
 
 // ASIGNANDO VALORES*********************************************
 
 // SUMA
 
-  $(".atriTable").on("click",".plusButton", function(){
+    $(".atriTable").on("click",".plusButton", function(){
 
 // definimos una variable q cambiara 'valor', la definimos con parseInt para q sea un numero e igual al valor del atributo 'value' del stat q hemos clickeado
 
 // utilizamos parents('.prueba') para llegar a donde se encuentra 'value'
 // el (this) nos llevara al stat q se haya clickeado
+
 
       var valor = parseInt($(this).parents('.prueba').attr("value"));    
 
@@ -156,99 +182,45 @@ var newCharacter ={
      
 // llamamos a la funcion processStats
 
-      charactersData.utils.processStats( valor,selectStat, $(this),$(".iniPoints"));
+      charactersData.utils.processStats( valor,selectStat, $(this),$(".iniPoints"), charactersData[profession].favoriteStat);
 
-
-
-
-  });
+      
+    });
 
 // RESTA    
 
-  $(".atriTable").on("click",".minusButton", function(){
+$(".atriTable").on("click",".minusButton", function(){
+
 
       var valor = parseInt($(this).parents('.prueba').attr("value"));    
 
       var selectStat = $(this).parents('.prueba').attr("stat");
      
-      charactersData.utils.minusStats( valor,selectStat, $(this),$(".iniPoints"));
 
-     
-  });
-   
+      charactersData.utils.minusStats( valor,selectStat, $(this),$(".iniPoints"), charactersData[profession].favoriteStat);
+
+      
+    });
 
 
 // BOTON SAVE ************************************************   
-  $(".finalChoice").on("click", ".checkButton", function(){
-
-newCharacter.ChaClass= profession;
-
-console.log(charactersData.globals.iniPoints);
-
-newCharacter.name= $("#selectedName").val();
-
-newCharacter.fuer= $("#fuerza").text();
-
-newCharacter.dextre= $("#destreza").text();
-
-newCharacter.inteli= $("#inteligencia").text();
-
-newCharacter.cari= $("#carisma").text();
-
-game.characters.push(newCharacter);
-
-console.log()
-
-// localStorage.setItem('game', JSON.stringify(game))
-
-// if('localStorage' in window && window['localStorage'] !== null){
-//   alert('ok');
-//   var storage = localStorage
-// }
-// else {alert('mal muy mal')}
-
-      $(".selectClass").removeClass("untochable");
-
-      $(".Expo").toggleClass("hide");
-
-      $(".className").text("");
-      $(".resume").text("");
-      $(".abilities").text("");
-      
-      $("#genStat").addClass("hide");
-
-      $(".prueba").attr("value", 0);
-
-      $(".stat01").text(0);
-
-      $("#selectedName").val("");
-
-      charactersData.globals.iniPoints = 20;
-
-
-  });
-
 
 
 // BOTON RESET ***********************************************
 
-  $(".finalChoice").on("click", ".resetButton", function(){
+    $(".finalChoice").on("click", ".resetButton", function(){
 
       $(".selectClass").removeClass("untochable");
 
       $(".Expo").toggleClass("hide");
-
-      $(".className").text("");
-      $(".resume").text("");
-      $(".abilities").text("");
       
-      $("#genStat").addClass("hide");
+      $("#genStat").toggleClass("hide");
 
       $(".prueba").attr("value", 0);
 
       $(".stat01").text(0);
 
-      $("#selectedName").val("");
+      $(".namepj").text(0);
 
       charactersData.globals.iniPoints = 20;
 
@@ -259,5 +231,9 @@ console.log()
 
 // LLAVE FINAL***************************************************
 });
+
+
+
+
 
 
