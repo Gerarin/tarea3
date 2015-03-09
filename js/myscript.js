@@ -11,21 +11,30 @@ var charactersData = {
 
     processStats:function(valor,selectStat, boton, acambiar){
 
-        charactersData.globals.iniPoints -=1;
-        valor +=1;
-        boton.parents('.prueba').find(".stat01").text(valor);
-        boton.parents('.prueba').attr("value", valor);
-        acambiar.text(charactersData.globals.iniPoints);
+        if (charactersData.globals.iniPoints !== 0) {
+          charactersData.globals.iniPoints -=1;
+          valor +=1;
+          boton.parents('.prueba').find(".stat01").text(valor);
+          boton.parents('.prueba').attr("value", valor);
+          acambiar.text(charactersData.globals.iniPoints);
+        }
+        
 
     },
 
     minusStats:function(valor,selectStat, boton, acambiar){
 
-        charactersData.globals.iniPoints +=1;
-        valor -=1;
-        boton.parents('.prueba').find(".stat01").text(valor);
-        boton.parents('.prueba').attr("value", valor);
-        acambiar.text(charactersData.globals.iniPoints);
+        if (charactersData.globals.iniPoints < 20) {
+          
+          if (boton.parents('.prueba').attr("value") >0 ){
+            charactersData.globals.iniPoints +=1;
+            valor -=1;
+            boton.parents('.prueba').find(".stat01").text(valor);
+            boton.parents('.prueba').attr("value", valor);
+            acambiar.text(charactersData.globals.iniPoints);
+
+          }  
+        }    
 
     },    
 
