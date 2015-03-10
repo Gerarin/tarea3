@@ -42,7 +42,7 @@ var charactersData = {
 
 
   "globals":{
-    "iniPoints": 20,
+    "iniPoints": 3,
     "selection_pointer": true,
   },
 
@@ -106,8 +106,9 @@ var newCharacter ={
   $( ".selection_column").on("click", ".pjClass", function(){
 
       // identificamos 'profesion' con el click q damos
-      profession = $(this).parent().attr("data");
+      var profession = $(this).parent().attr("data");
 
+      newCharacter.ChaClass = profession;
 
       // le asignamos falso a 'selection_pointer' 
       charactersData.globals.selection_pointer = false;
@@ -188,25 +189,22 @@ var newCharacter ={
 
 
 // BOTON SAVE ************************************************   
+
   $(".finalChoice").on("click", ".checkButton", function(){
 
-newCharacter.ChaClass= profession;
+    if (charactersData.globals.iniPoints == 0) {
 
-console.log(charactersData.globals.iniPoints);
+      newCharacter.name = $("#selectedName").val();
 
-newCharacter.name= $("#selectedName").val();
+      newCharacter.fuer= $("#fuerza").text();
 
-newCharacter.fuer= $("#fuerza").text();
+      newCharacter.dextre= $("#destreza").text();
 
-newCharacter.dextre= $("#destreza").text();
+      newCharacter.inteli= $("#inteligencia").text();
 
-newCharacter.inteli= $("#inteligencia").text();
+      newCharacter.cari= $("#carisma").text();
 
-newCharacter.cari= $("#carisma").text();
-
-game.characters.push(newCharacter);
-
-console.log()
+     
 
 // localStorage.setItem('game', JSON.stringify(game))
 
@@ -232,10 +230,35 @@ console.log()
 
       $("#selectedName").val("");
 
-      charactersData.globals.iniPoints = 20;
+      charactersData.globals.iniPoints = 3;
+
+      var savedCha = JSON.stringify(newCharacter);
+
+      console.log(savedCha);
+      console.log(newCharacter);
+
+      game.characters.push(savedCha);
 
 
+      $(".personaje_listo_imagen").attr("src", newCharacter.chaIma);
+      $(".personaje_listo_name").text(newCharacter.name);
+      
+      $(".personaje_listo").clone().appendTo("#cajaFinal");
+     
+      $("#cajaFinal").find('div').removeClass(" hide personaje_listo_imagen personaje_listo_name personaje_listo "); 
+      $("#cajaFinal").find('h4').removeClass(" personaje_listo_name"); 
+      $("#cajaFinal").find('img').removeClass("personaje_listo_imagen "); 
+
+      };
   });
+
+
+  $(".picture_galery").on("click", ".cha_image", function(){
+
+      newCharacter.chaIma = $(this).attr("src");
+      console.log($(this).attr("src"));
+
+    });
 
 
 
@@ -259,8 +282,9 @@ console.log()
 
       $("#selectedName").val("");
 
-      charactersData.globals.iniPoints = 20;
+      newCharacter.ChaClass = "";
 
+      charactersData.globals.iniPoints = 3;
 
     });
 

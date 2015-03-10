@@ -24,7 +24,21 @@
 	padding-bottom: 20px;
 }
 
+.margin_arriba{
+	margin-top: 30px;
+}
+
 .untochable{
 	pointer-events: none;
 
+}
+
+#cajaFinal>div{
+	border: 1px red solid;
+	margin-bottom: 5px;
+}
+
+#cajaFinal img{
+	height: 120px;
+	width: 100%;
 }

@@ -152,6 +152,7 @@
 
         
           <div class=" small-12 columns text-right">
+            <a class="button round secondary success left" role="button" href="#" data-reveal-id="myModal">Portrait Selection</a>
             <h4>Total points Remaining: <span class="iniPoints"></span></h4>
           </div>
 
@@ -187,7 +188,7 @@
 
 <!-- boton para grabar el personaje creado para utilizarlo despues -->
 
-            <a class="columns small-5 button round secondary success checkButton " role="button" href="#" data-reveal-id="myModal">Add to Party</a>
+            <a class="columns small-5 button round secondary success checkButton " role="button" href="#" >Add to Party</a>
         
 <!-- boton para borrar todoy regresar a 0 -->
 
@@ -199,12 +200,13 @@
 
 <!-- aqui va el partie completo a medida q lo va editando -->
 
-        <div class="row">
+        
   
-          <div class="columns small-4">player 01</div>
-          <div class="columns small-4">player 02</div>
-          <div class="columns small-4">player 03</div>
-            
+        <div id="cajaFinal" class="row ">
+          
+        </div>
+
+        <div class="row ">    
           <div class="columns small-12">
              <button class="button disabled centered success expand round">LETS KILL SOME ORCS!!!</button>
           </div>
@@ -217,67 +219,67 @@
     </div>
 
 
-    <div id="myModal" class="reveal-modal" data-reveal>
+    <div id="myModal" class="reveal-modal picture_galery" data-reveal>
       <div class="row">
         <div class="small-2 columns cha_image_galery"> 
-          <a href=""><img src="img/01.jpg" alt="">
+          <a href="#"><img class="cha_image" src="img/01.jpg" alt="">
           </a>
         </div>
 
         <div class="small-2 columns cha_image_galery">
-          <a href=""> <img src="img/02.jpg" alt="">
+          <a href="#"> <img class="cha_image" src="img/02.jpg" alt="">
           </a>
         </div>
 
         <div class="small-2 columns cha_image_galery">
-          <a href=""> <img src="img/03.jpg" alt="">
+          <a href="#"> <img class="cha_image" src="img/03.jpg" alt="">
           </a>
         </div>
 
         <div class="small-2 columns cha_image_galery">
-          <a href=""> <img src="img/04.jpg" alt="">
+          <a href="#"> <img class="cha_image" src="img/04.jpg" alt="">
           </a>
         </div>
         
         <div class="small-2 columns cha_image_galery"> 
-          <a href=""><img src="img/05.jpg" alt="">
+          <a href="#"><img class="cha_image" src="img/05.jpg" alt="">
           </a>
         </div>
         
         <div class="small-2 columns cha_image_galery"> 
-          <a href=""><img src="img/06.jpg" alt="">
+          <a href="#"><img class="cha_image" src="img/06.jpg" alt="">
           </a>
         </div>
       </div>
 
-      <div class="row">  
+      <div class="row margin_arriba">  
         <div class="small-2 columns cha_image_galery"> 
-          <a href=""><img src="img/07.jpg" alt="">
+          <a href="#"><img class="cha_image" src="img/07.jpg" alt=""> 
           </a>
         </div>
         
         <div class="small-2 columns cha_image_galery">
-          <a href=""> <img src="img/08.jpg" alt="">
+          <a href="#"> <img class="cha_image" src="img/08.jpg" alt="">
           </a>
         </div>
         
         <div class="small-2 columns cha_image_galery"> 
-          <a href=""><img src="img/09.jpg" alt="">
+          <a href="#"><img class="cha_image" src="img/09.jpg" alt="">
           </a>
         </div>
         
         <div class="small-2 columns cha_image_galery"> 
-          <a href=""><img src="img/10.jpg" alt="">
+          <a href="#"><img class="cha_image" src="img/10.jpg" alt="">
           </a>
         </div>
         
         <div class="small-2 columns cha_image_galery"> 
-          <a href=""><img src="img/11.jpg" alt="">
+          <a href="#"><img class="cha_image" src="img/11.jpg" alt="">
           </a>
         </div>
         
         <div class="small-2 columns cha_image_galery"> 
-          <a href=""><img src="img/12.jpg" alt="">
+          <a href="#"><img class="cha_image" src="img/12.jpg" alt="">
           </a>
         </div>
 
@@ -285,6 +287,10 @@
       </div>
     </div>
              
+    <div class="columns small-12 personaje_listo hide ">
+      <div class="small-6 columns"><img class="personaje_listo_imagen" src="" alt=""></div>
+      <div class="small-6 columns"><h4 class="personaje_listo_name"></h4></div>
+    </div>         
 
     
     <script src="js/vendor/jquery.js"></script>
