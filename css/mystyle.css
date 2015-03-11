@@ -1,22 +1,22 @@
-.pjSheet{
-	border: solid green 1px;
-	/*background-image: url("../img/bgtarea3.jpg");*/
+/*.pjSheet{
+	background-image: url("../img/bgtarea3.jpg");
+	background-size: cover;
 }
-
+*/
 .namepj{
 	background-color: transparent!important;
 	border: solid black 2px;
 }
 
 
-.statGen{
+/*.statGen{
 
 	padding-top: 20px;
-}
+}*/
 
 .atriTable{
 
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 
 .headTable{
@@ -25,7 +25,11 @@
 }
 
 .margin_arriba{
-	margin-top: 30px;
+	margin-top: 20px;
+}
+
+.margin_abajo{
+	margin-bottom: 20px;
 }
 
 .untochable{
@@ -39,7 +43,7 @@
 }
 
 #cajaFinal img{
-	height: 120px;
+	height: 100px;
 	width: 100%;
 }
 

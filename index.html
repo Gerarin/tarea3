@@ -26,44 +26,46 @@
     </header>
 
 
-    <div class="row">
+    <div class="row pjSheet">
       <hr>
 
 <!-- aqui van las clases -->
 
-      <div class="small-2 small-2 columns selection_column">
+      <div class="small-12 columns selection_column margin_abajo">
+        <div class="row">
 
-        <div id="fighterID" data="fighter" class="selectClass">
-          <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass fighter"  title="Fuerza y Destreza, BLOOD for Honor!!!" src="img/fighter.png">
+          <div id="fighterID" data="fighter" class="selectClass small-2 small-offset-1 columns">
+            <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass fighter"  title="Fuerza y Destreza, BLOOD for Honor!!!" src="img/fighter.png">
+          </div>
+
+          <div id="wizardID" data="wizard" class="selectClass small-2 columns">
+            <img data-tooltip aria-haspopup="true" class="has-tiptip-right pjClass wizard"  title="Magia y Energias Miticas, los magos pueden cambiar el mundo con un chasquido de sus dedos... o morir en el intento" src="img/wizard.png">
+          </div>
+    
+          <div id="clericID" data="cleric" class="selectClass small-2 columns">
+            <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass"  title="Deja de rezar y curame pinche cleric!!!!" cla ss="cleric" src="img/cleric.png">
+          </div>  
+
+          <div id="rogueID" data="rogue" class="selectClass small-2 columns">
+            <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass"  title="Las dagas en la oscuridad... nadie esta seguro!!" class="rogue" src="img/rogue.png">
+          </div>
+
+          <div id="bardID" data="bard" class="selectClass small-2 columns end">
+            <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass"  title="Los Bardos cantan bonito" class="bard" src="img/bardo.png">
+          </div>
+
         </div>
-
-        <div id="wizardID" data="wizard" class="selectClass">
-          <img data-tooltip aria-haspopup="true" class="has-tiptip-right pjClass wizard"  title="Magia y Energias Miticas, los magos pueden cambiar el mundo con un chasquido de sus dedos... o morir en el intento" src="img/wizard.png">
-        </div>
-  
-        <div id="clericID" data="cleric" class="selectClass">
-          <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass"  title="Deja de rezar y curame pinche cleric!!!!" cla ss="cleric" src="img/cleric.png">
-        </div>  
-
-        <div id="rogueID" data="rogue" class="selectClass">
-          <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass"  title="Las dagas en la oscuridad... nadie esta seguro!!" class="rogue" src="img/rogue.png">
-        </div>
-
-        <div id="bardID" data="bard" class="selectClass">
-          <img data-tooltip aria-haspopup="true" class="has-tip tip-right pjClass"  title="Los Bardos cantan bonito" class="bard" src="img/bardo.png">
-        </div>
-
       </div>
 
 
 
 <!-- aqui ira el editor del personaje -->
 
-      <div class="large-5 small-8 columns pjEditor">
+      <div class="small-4 columns pjEditor">
       
         <div class="row">
       
-         <div id="genStat" class="statGen hide">
+         <div id="genStat" class="statGen ">
       
           <form name="newName" method="" action="">
 
@@ -153,7 +155,7 @@
         
           <div class=" small-12 columns text-right">
             <a class="button round secondary success left" role="button" href="#" data-reveal-id="myModal">Portrait Selection</a>
-            <h4>Total points Remaining: <span class="iniPoints"></span></h4>
+            <h5>Total points Remaining: <span class="iniPoints"></span></h5>
           </div>
 
         </div> <!-- statGen --> 
@@ -162,10 +164,15 @@
 
       </div> <!-- pjEditor -->
 
+<!-- Aqui aparecen los membros del partie a medida q los van creando -->
+
+      <div id="cajaFinal" class="small-4 columns">
+      </div>
+
 
 <!-- aqui iran explicaciones y los botones q indican q se ha acabado el proceso -->
 
-      <div class="small-5 columns infoPanel">
+      <div class="small-4 columns infoPanel ">
 
         <div class="panel">
 
@@ -188,23 +195,17 @@
 
 <!-- boton para grabar el personaje creado para utilizarlo despues -->
 
-            <a class="columns small-5 button round secondary success checkButton " role="button" href="#" >Add to Party</a>
+            <a class="columns small-6 button round secondary success checkButton " role="button" href="#" >Add to Party</a>
         
 <!-- boton para borrar todoy regresar a 0 -->
 
-            <a class="columns small-5 button round secondary success resetButton" role="button" aria-label="submit form" href="#" >REJECTED</a>
+            <a class="columns small-6 button round secondary success resetButton" role="button" aria-label="submit form" href="#" >REJECTED</a>
           
           </div>
   
         </div>
 
 <!-- aqui va el partie completo a medida q lo va editando -->
-
-        
-  
-        <div id="cajaFinal" class="row ">
-          
-        </div>
 
         <div class="row finalButton">    
           <div class="columns small-12">
@@ -215,8 +216,9 @@
 
       </div>
       <!-- cierre de infoPanel -->
-
     </div>
+
+
 
 
     <div id="myModal" class="reveal-modal picture_galery" data-reveal>
@@ -288,8 +290,12 @@
     </div>
              
     <div class="columns small-12 personaje_listo hide ">
-      <div class="small-6 columns"><img class="pj_listo_imagen" src="" alt=""></div>
-      <div class="small-6 columns"><h4 class="pj_listo_name"></h4></div>
+      <div class="row">
+
+      <div class="margin_arriba margin_abajo small-5 columns"><img class="pj_listo_imagen" src="" alt=""></div>
+      <div class="small-7 columns"><h4 class="pj_listo_name"></h4></div>
+
+      </div>
     </div>         
 
     

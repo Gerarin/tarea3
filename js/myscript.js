@@ -108,10 +108,6 @@ $(document).ready(function(){
       // le asignamos falso a 'selection_pointer' 
       charactersData.globals.selection_pointer = false;
 
-      // si genStat tiene hide, se lo remueve
-      if ($("#genStat").hasClass("hide")){
-
-          $(".statGen").removeClass("hide");
 
 // HACE INCLICKEABLE ZONA D SELECCION D CLASE con la variable 'selection_pointer'
 
@@ -133,7 +129,7 @@ $(document).ready(function(){
           // se setea .iniPoints a la cantidad inicial
           $(".iniPoints").text(charactersData.globals.iniPoints);
 
-      };
+      // };
   });
 
 // ASIGNANDO VALORES*********************************************
@@ -209,7 +205,7 @@ var i = 0;
             $(".abilities").text("");
             
             // desaparece #genStat y se borran sus valores
-            $("#genStat").addClass("hide");
+            // $("#genStat").addClass("hide");
             $(".prueba").attr("value", 0);
             $(".stat01").text(0);
             $("#selectedName").val("");
@@ -265,7 +261,6 @@ var i = 0;
       $(".resume").text("");
       $(".abilities").text("");
       
-      $("#genStat").addClass("hide");
 
       $(".prueba").attr("value", 0);
 
@@ -306,7 +301,9 @@ var i = 0;
 // ACTIVANDO BOTON PARTIE LISTO
 
   $(".finalButton").on("click", "#readyBaby", function(){
-    localStorage.setItem('game', JSON.stringify(game))
+  localStorage.setItem('game', JSON.stringify(game))
+
+
 
   });
   
